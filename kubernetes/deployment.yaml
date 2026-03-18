@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hape-dora-demo-service-x
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hape-dora-demo-service-x
+  template:
+    metadata:
+      labels:
+        app: hape-dora-demo-service-x
+    spec:
+      containers:
+      - name: hape-dora-demo-service-x
+        image: nginx:1.27
+        ports:
+        - containerPort: 80
